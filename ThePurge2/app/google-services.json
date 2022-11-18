@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "364652820298",
+    "project_id": "thepurge2-ec4fb",
+    "storage_bucket": "thepurge2-ec4fb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:364652820298:android:b29f47c3215d300b1933b3",
+        "android_client_info": {
+          "package_name": "com.serkanozcelik.thepurge2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "364652820298-9d6v50teahr880hnu0emi8dbdhravnra.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBv3NVeZ_jS36qgo4e4NViXov3V6jdAgms"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "364652820298-9d6v50teahr880hnu0emi8dbdhravnra.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

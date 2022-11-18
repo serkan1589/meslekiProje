@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/editTxtBirinciSayi"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="176dp"
+        android:ems="10"
+        android:hint="Birinci Sayıyı Giriniz"
+        android:inputType="numberSigned|textPersonName"
+        android:textColor="#000000"
+        android:textSize="17sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editTxtIkinciSayi"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:ems="10"
+        android:hint="İkinci Sayıyı Giriniz"
+        android:inputType="numberSigned|textPersonName"
+        android:textColor="#000000"
+        android:textSize="17sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTxtBirinciSayi" />
+
+    <Button
+        android:id="@+id/btnFark"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="47dp"
+        android:onClick="btnHesapla"
+        android:text="-"
+        android:textSize="19sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/btnBolme"
+        app:layout_constraintStart_toEndOf="@+id/btnTopla"
+        app:layout_constraintTop_toBottomOf="@+id/editTxtIkinciSayi" />
+
+    <Button
+        android:id="@+id/btnTopla"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="2dp"
+        android:onClick="btnHesapla"
+        android:text="+"
+        android:textSize="19sp"
+        android:textStyle="bold"
+        app:layout_constraintBaseline_toBaselineOf="@+id/btnFark"
+        app:layout_constraintEnd_toStartOf="@+id/btnFark"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btnCarp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="2dp"
+        android:onClick="btnHesapla"
+        android:text="*"
+        android:textSize="19sp"
+        android:textStyle="bold"
+        app:layout_constraintBaseline_toBaselineOf="@+id/btnBolme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btnBolme" />
+
+    <Button
+        android:id="@+id/btnBolme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="5dp"
+        android:onClick="btnHesapla"
+        android:text="/"
+        android:textSize="19sp"
+        android:textStyle="bold"
+        app:layout_constraintBaseline_toBaselineOf="@+id/btnFark"
+        app:layout_constraintEnd_toStartOf="@+id/btnCarp"
+        app:layout_constraintStart_toEndOf="@+id/btnFark" />
+
+    <TextView
+        android:id="@+id/txtViewSonuc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="66dp"
+        android:layout_marginTop="52dp"
+        android:layout_marginEnd="65dp"
+        android:text="Sonuç: "
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/btnBolme"
+        app:layout_constraintStart_toStartOf="@+id/btnFark"
+        app:layout_constraintTop_toBottomOf="@+id/btnBolme" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
