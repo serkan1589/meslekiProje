@@ -13,7 +13,7 @@ public class RegisterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-        TextView btn=(TextView) findViewById(R.id.);
+        TextView btn=(TextView) findViewById(R.id.btnlogin);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

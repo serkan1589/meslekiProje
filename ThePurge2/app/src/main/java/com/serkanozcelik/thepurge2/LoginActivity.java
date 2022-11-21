@@ -25,7 +25,7 @@ public class LoginActivity extends AppCompatActivity {
 
         btn=(TextView) findViewById(R.id.textViewKayıtOl);
         editTextEmail=(EditText)findViewById(R.id.editTextEmail);
-        editUserPassword=(EditText)findViewById(R.id.editUserPassword);
+        editUserPassword=(EditText)findViewById(R.id.editUserName);
         btnLogin=(Button)findViewById(R.id.btnLogin);
 
         btnLogin.setOnClickListener(new View.OnClickListener() {

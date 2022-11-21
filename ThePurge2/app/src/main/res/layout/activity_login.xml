@@ -47,7 +47,7 @@
         tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
 
     <EditText
-        android:id="@+id/editUserPassword"
+        android:id="@+id/editUserName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -80,8 +80,8 @@
         android:textColor="@color/colorWhite"
         android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/editUserPassword"
-        app:layout_constraintTop_toBottomOf="@+id/editUserPassword" />
+        app:layout_constraintEnd_toEndOf="@+id/editUserName"
+        app:layout_constraintTop_toBottomOf="@+id/editUserName" />
 
     <Button
         android:id="@+id/btnLogin"

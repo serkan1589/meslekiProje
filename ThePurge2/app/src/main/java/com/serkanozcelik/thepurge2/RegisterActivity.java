@@ -20,7 +20,7 @@ import com.google.firebase.auth.FirebaseAuth;
 public class RegisterActivity extends AppCompatActivity {
     TextView btn;
 
-    private EditText editUserName,editTextEmail,editTextPassword,editTextConfirmPassword;
+    private EditText editUserNama,editTextEmail2,editTextPassword1,editTextConfirmPassword3;
     private FirebaseAuth mAuth;
     private ProgressDialog mLoadingBar;
     Button btnKayıtOl;
@@ -29,10 +29,10 @@ public class RegisterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
         btn=findViewById(R.id.textViewHesabınVarmı);
-        editUserName=findViewById(R.id.editUserPassword);
-        editTextEmail=findViewById(R.id.editTextEmail);
-        editTextPassword=findViewById(R.id.editTextPassword);
-        editTextConfirmPassword=findViewById(R.id.editTextConfirmPassword);
+        editUserNama=findViewById(R.id.editUserName);
+        editTextEmail2=findViewById(R.id.editTextEmail);
+        editTextPassword1=findViewById(R.id.editTextPassword);
+        editTextConfirmPassword3=findViewById(R.id.editTextConfirmPassword);
         btnKayıtOl=findViewById(R.id.btnRegister);
 
         mAuth=(FirebaseAuth)FirebaseAuth.getInstance();
@@ -44,6 +44,7 @@ public class RegisterActivity extends AppCompatActivity {
                 kontrolBilgiler();
             }
         });
+
 
 
         kontrolBilgiler();
@@ -59,20 +60,20 @@ public class RegisterActivity extends AppCompatActivity {
 
     private void kontrolBilgiler() {
 
-        String kullanıcıAdı=editUserName.getText().toString();
-        String email=editTextEmail.getText().toString();
-        String sifre=editTextPassword.getText().toString();
-        String sifreTekrar=editTextConfirmPassword.getText().toString();
+        String kullanıcıAdı=editUserNama.getText().toString();
+        String email=editTextEmail2.getText().toString();
+        String sifre=editTextPassword1.getText().toString();
+        String sifreTekrar=editTextConfirmPassword3.getText().toString();
 
 
         if (kullanıcıAdı.isEmpty()|| kullanıcıAdı.length()<7){
-            hataGöster(editUserName,"Kullanıcı adı geçerli değil!!");
+            hataGöster(editUserNama,"Kullanıcı adı geçerli değil!!");
         }else if (email.isEmpty()|| !email.contains("@")){
-            hataGöster(editTextEmail,"Email geçerli değil!! ");
+            hataGöster(editTextEmail2,"Email geçerli değil!! ");
         } else if (sifre.isEmpty()|| sifre.length()<7) {
-            hataGöster(editTextPassword,"Şifre 7 karakterli olmalı");
+            hataGöster(editTextPassword1,"Şifre 7 karakterli olmalı");
         }else if (sifreTekrar.isEmpty()|| !sifreTekrar.equals(sifre)){
-            hataGöster(editTextConfirmPassword,"Şifre Eşleşmedi!");
+            hataGöster(editTextConfirmPassword3,"Şifre Eşleşmedi!");
         }else{
            mLoadingBar.setTitle("Kayıt");
            mLoadingBar.setMessage("Kayıt oluşturuluyor");
@@ -86,12 +87,14 @@ public class RegisterActivity extends AppCompatActivity {
                    if (task.isSuccessful()){
                        Toast.makeText(RegisterActivity.this,"Kayıt başarılı",Toast.LENGTH_SHORT);
 
-                       Intent intent =new Intent(RegisterActivity.this,MainActivity.class);
-                       intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK |Intent.FLAG_ACTIVITY_NEW_TASK);
+                       Intent intent =new Intent(RegisterActivity.this,LoginActivity.class);
+                       intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK |Intent.FLAG_ACTIVITY_CLEAR_TASK);
                        startActivity(intent);
 
                    }else{
                        Toast.makeText(RegisterActivity.this,task.getException().toString(),Toast.LENGTH_SHORT);
+                       mLoadingBar.dismiss();
+
                    }
 
                }
@@ -103,7 +106,7 @@ public class RegisterActivity extends AppCompatActivity {
 
 
          editUserEditText.setError(s);
-        editUserEditText.requestFocus();
+         editUserEditText.requestFocus();
 
     }
 }
